@@ -18,7 +18,7 @@ class RoomsWidget extends Widget_Base
 
     public function get_title()
     {
-        return __('Accommodation Types Listing', 'mphb-elementor');
+        return __('Accommodation Types', 'mphb-elementor');
     }
 
     public function get_icon()

@@ -18,7 +18,7 @@ class SearchResultsWidget extends Widget_Base
 
     public function get_title()
     {
-        return __('Availability Search Results', 'mphb-elementor');
+        return __('Search Results', 'mphb-elementor');
     }
 
     public function get_icon()

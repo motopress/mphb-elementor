@@ -18,7 +18,7 @@ class RoomWidget extends Widget_Base
 
     public function get_title()
     {
-        return __('Single Accommodation Type', 'mphb-elementor');
+        return __('Single Accommodation', 'mphb-elementor');
     }
 
     public function get_icon()

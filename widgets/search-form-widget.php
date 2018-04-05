@@ -18,7 +18,7 @@ class SearchFormWidget extends Widget_Base
 
     public function get_title()
     {
-        return __('Availability Search Form', 'mphb-elementor');
+        return __('Search Availability Form', 'mphb-elementor');
     }
 
     public function get_icon()

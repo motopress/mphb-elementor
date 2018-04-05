@@ -1,7 +1,7 @@
 <?php
 
 /*
- * Plugin Name: Hotel Booking Shortcodes for Elementor
+ * Plugin Name: mphb-elementor
  * Plugin URI: https://motopress.com/
  * Description: Manage hotel booking shortcodes in Elementor builder.
  * Version: 1.0.0

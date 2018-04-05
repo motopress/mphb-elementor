@@ -18,7 +18,7 @@ class RatesWidget extends Widget_Base
 
     public function get_title()
     {
-        return __('Accommodation Rates List', 'mphb-elementor');
+        return __('Accommodation Rates', 'mphb-elementor');
     }
 
     public function get_icon()
