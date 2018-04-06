@@ -2,14 +2,9 @@
 
 namespace mphbe\widgets;
 
-use \Elementor\Widget_Base;
 use \Elementor\Controls_Manager;
 
-if (!defined('ABSPATH')) {
-    exit('Press Enter to proceed...');
-}
-
-class BookingConfirmationWidget extends Widget_Base
+class BookingConfirmationWidget extends AbstractWidget
 {
     public function get_name()
     {
@@ -26,20 +21,6 @@ class BookingConfirmationWidget extends Widget_Base
         // Elementor icon class ( https://pojome.github.io/elementor-icons/ ) or
         // Font Awesome icon class ( https://fontawesome.com/ ), like:
         return 'eicon-lock-user';
-    }
-
-    /**
-     * Retrieve the list of categories the widget belongs to.
-     *
-     * Used to determine where to display the widget in the editor.
-     *
-     * Note that currently Elementor supports only one category.
-     * When multiple categories passed, Elementor uses the first one.
-     *
-     * @return string[] Widget categories.
-     */
-    public function get_categories() {
-        return array('motopress-hotel-booking');
     }
 
     /**
@@ -73,12 +54,4 @@ class BookingConfirmationWidget extends Widget_Base
         $shortcode = new \MPHB\Shortcodes\BookingConfirmationShortcode();
         echo $shortcode->render($atts, null, MPHB()->getShortcodes()->getBookingConfirmation()->getName());
     }
-
-    /**
-     * Render the widget output in the editor.
-     *
-     * Written as a Backbone JavaScript template and used to generate the live
-     * preview.
-     */
-    protected function _content_template() {}
 }

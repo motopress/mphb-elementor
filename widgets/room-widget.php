@@ -2,14 +2,9 @@
 
 namespace mphbe\widgets;
 
-use \Elementor\Widget_Base;
 use \Elementor\Controls_Manager;
 
-if (!defined('ABSPATH')) {
-    exit('Press Enter to proceed...');
-}
-
-class RoomWidget extends Widget_Base
+class RoomWidget extends AbstractGalleryWidget
 {
     public function get_name()
     {
@@ -26,20 +21,6 @@ class RoomWidget extends Widget_Base
         // Elementor icon class ( https://pojome.github.io/elementor-icons/ ) or
         // Font Awesome icon class ( https://fontawesome.com/ ), like:
         return 'eicon-image-box';
-    }
-
-    /**
-     * Retrieve the list of categories the widget belongs to.
-     *
-     * Used to determine where to display the widget in the editor.
-     *
-     * Note that currently Elementor supports only one category.
-     * When multiple categories passed, Elementor uses the first one.
-     *
-     * @return string[] Widget categories.
-     */
-    public function get_categories() {
-        return array('motopress-hotel-booking');
     }
 
     /**
@@ -137,6 +118,17 @@ class RoomWidget extends Widget_Base
             )
         ));
 
+        $this->add_control('book_button', array(
+            'type'        => Controls_Manager::SELECT,
+            'label'       => __('Book Button', 'mphb-elementor'),
+            'description' => __('Whether to display "Book" button.', 'mphb-elementor'),
+            'default'     => 'true',
+            'options'     => array(
+                'true'          => __('Yes', 'mphb-elementor'),
+                'false'         => __('No', 'mphb-elementor')
+            )
+        ));
+
         $this->add_control('class', array(
             'type'        => Controls_Manager::TEXT,
             'label'       => __('Class', 'mphb-elementor'),
@@ -158,13 +150,6 @@ class RoomWidget extends Widget_Base
         $atts['id'] = (empty($atts['type_id']) ? 0 : $atts['type_id']);
         $shortcode = new \MPHB\Shortcodes\RoomShortcode();
         echo $shortcode->render($atts, null, MPHB()->getShortcodes()->getRoom()->getName());
+        parent::render();
     }
-
-    /**
-     * Render the widget output in the editor.
-     *
-     * Written as a Backbone JavaScript template and used to generate the live
-     * preview.
-     */
-    protected function _content_template() {}
 }
