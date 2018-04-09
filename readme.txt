@@ -1,7 +1,7 @@
 === Hotel Booking & Elementor Integration ===
 Contributors: MotoPress
 Donate link: https://motopress.com/
-Tags: hotel, booking, reservation, rental, property
+Tags: hotel, booking, reservation, elementor
 Requires at least: 4.0
 Tested up to: 4.9
 Stable tag: trunk
@@ -44,5 +44,9 @@ Hotel Booking & Elementor Integration plugin is distributed under the terms of t
 
 == Changelog ==
 
-= 1.0.0 =
+= 1.0.0, Apr 9 2018 =
+* Minor bugfixes and improvements
+
+
+= 1.0.0, Apr 6 2018 =
 * Initial release
