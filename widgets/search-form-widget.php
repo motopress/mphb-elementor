@@ -73,6 +73,14 @@ class SearchFormWidget extends AbstractWidget
             'default'     => ''
         ));
 
+        $this->add_control('attributes', array(
+            'type'        => Controls_Manager::TEXT,
+            'label'       => __('Attributes', 'mphb-elementor'),
+            'description' => __('Custom attributes for advanced search.', 'mphb-elementor'),
+            'placeholder' => __('Slugs of attributes', 'mphb-elementor'),
+            'default'     => ''
+        ));
+
         $this->add_control('class', array(
             'type'        => Controls_Manager::TEXT,
             'label'       => __('Class', 'mphb-elementor'),
