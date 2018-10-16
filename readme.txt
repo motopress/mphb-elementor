@@ -12,7 +12,7 @@ Build your property rental website visually with MotoPress Hotel Booking plugin 
 
 == Description ==
 
-We tied [MotoPress Hotel Booking plugin](https://motopress.com/products/hotel-booking/?utm_source=wp-org&utm_medium=textlink&utm_campaign=hotel-booking-elementor-integration&utm_content=motopress-hotel-booking) and Elementor together to provide you with a more user-friendly toolkit for building your property rental website visually. 
+We tied [WordPress Hotel Booking plugin](https://motopress.com/products/hotel-booking/?utm_source=wp-org&utm_medium=textlink&utm_campaign=hotel-booking-elementor-integration&utm_content=motopress-hotel-booking) and Elementor together to provide you with a more user-friendly toolkit for building your property rental website visually. 
 
 Thanks to smooth plugins integration, you'll be able to see all MotoPress Hotel Booking shortcodes and widgets (e.g. search availability form, rentals listing, etc.) in the list of the content modules in the Elementor builder. It will help you add all needed shortcodes and edit their parameters in a real time, via a more user-friendly Elementor interface.
 
