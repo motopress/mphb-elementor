@@ -66,7 +66,13 @@ class ServicesWidget extends AbstractWidget
     protected function render()
     {
         $atts = $this->get_settings();
+
+        do_action('mphbe_before_services_widget_render', $atts);
+
         $shortcode = new \MPHB\Shortcodes\ServicesShortcode();
         echo $shortcode->render($atts, null, MPHB()->getShortcodes()->getServices()->getName());
+
+        do_action('mphbe_after_services_widget_render', $atts);
+
     }
 }

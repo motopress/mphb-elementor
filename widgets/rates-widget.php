@@ -58,9 +58,16 @@ class RatesWidget extends AbstractWidget
      */
     protected function render()
     {
+
         $atts = $this->get_settings();
         $atts['id'] = $atts['type_id'];
+
+        do_action('mphbe_before_rates_widget_render', $atts);
+
         $shortcode = new \MPHB\Shortcodes\RoomRatesShortcode();
         echo $shortcode->render($atts, null, MPHB()->getShortcodes()->getRoomRates()->getName());
+
+        do_action('mphbe_after_rates_widget_render', $atts);
+
     }
 }

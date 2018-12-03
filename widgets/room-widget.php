@@ -146,10 +146,17 @@ class RoomWidget extends AbstractGalleryWidget
      */
     protected function render()
     {
+
         $atts = $this->get_settings();
         $atts['id'] = (empty($atts['type_id']) ? 0 : $atts['type_id']);
+
+        do_action('mphbe_before_room_widget_render', $atts);
+
         $shortcode = new \MPHB\Shortcodes\RoomShortcode();
         echo $shortcode->render($atts, null, MPHB()->getShortcodes()->getRoom()->getName());
         parent::render();
+
+        do_action('mphbe_after_room_widget_render', $atts);
+
     }
 }

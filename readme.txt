@@ -44,6 +44,9 @@ Hotel Booking & Elementor Integration plugin is distributed under the terms of t
 
 == Changelog ==
 
+= 1.0.3, XXX =
+* Added set of actions to be executed before and after Hotel Booking & Elementor Integration widgets render.
+
 = 1.0.2, Oct 16 2018 =
 * Added the ability to set the attributes for advanced search.
 

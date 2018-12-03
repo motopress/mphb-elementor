@@ -178,9 +178,16 @@ class RoomsWidget extends AbstractGalleryWidget
      */
     protected function render()
     {
+
         $atts = $this->get_settings();
+
+        do_action('mphbe_before_rooms_widget_render', $atts);
+
         $shortcode = new \MPHB\Shortcodes\RoomsShortcode();
         echo $shortcode->render($atts, null, MPHB()->getShortcodes()->getRooms()->getName());
         parent::render();
+
+        do_action('mphbe_after_rooms_widget_render', $atts);
+
     }
 }

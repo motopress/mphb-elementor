@@ -51,7 +51,13 @@ class CheckoutWidget extends AbstractWidget
     protected function render()
     {
         $atts = $this->get_settings();
+
+        do_action('mphbe_before_checkout_widget_render', $atts);
+
         $shortcode = new \MPHB\Shortcodes\CheckoutShortcode();
         echo $shortcode->render($atts, null, MPHB()->getShortcodes()->getCheckout()->getName());
+
+        do_action('mphbe_after_checkout_widget_render', $atts);
+
     }
 }
