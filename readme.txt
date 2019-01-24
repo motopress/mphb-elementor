@@ -16,6 +16,8 @@ We tied [WordPress Hotel Booking plugin](https://motopress.com/products/hotel-bo
 
 Thanks to smooth plugins integration, you'll be able to see all MotoPress Hotel Booking shortcodes and widgets (e.g. search availability form, rentals listing, etc.) in the list of the content modules in the Elementor builder. It will help you add all needed shortcodes and edit their parameters in a real time, via a more user-friendly Elementor interface.
 
+[youtube https://www.youtube.com/watch?v=eNaTt2Fr9Eg]
+
 Hotel Booking & Elementor Integration plugin will significantly speed up the process of editing your renting property website, providing more seamless editing experience for non-tech people.
 
 This plugin requires:
