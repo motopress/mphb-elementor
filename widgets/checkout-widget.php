@@ -54,8 +54,8 @@ class CheckoutWidget extends AbstractWidget
 
         do_action('mphbe_before_checkout_widget_render', $atts);
 
-        $shortcode = new \MPHB\Shortcodes\CheckoutShortcode();
-        echo $shortcode->render($atts, null, MPHB()->getShortcodes()->getCheckout()->getName());
+        $shortcode = MPHB()->getShortcodes()->getCheckout();
+        echo $shortcode->render($atts, null, $shortcode->getName());
 
         do_action('mphbe_after_checkout_widget_render', $atts);
 

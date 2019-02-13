@@ -183,8 +183,8 @@ class RoomsWidget extends AbstractGalleryWidget
 
         do_action('mphbe_before_rooms_widget_render', $atts);
 
-        $shortcode = new \MPHB\Shortcodes\RoomsShortcode();
-        echo $shortcode->render($atts, null, MPHB()->getShortcodes()->getRooms()->getName());
+        $shortcode = MPHB()->getShortcodes()->getRooms();
+        echo $shortcode->render($atts, null, $shortcode->getName());
         parent::render();
 
         do_action('mphbe_after_rooms_widget_render', $atts);

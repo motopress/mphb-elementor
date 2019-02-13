@@ -103,8 +103,8 @@ class SearchFormWidget extends AbstractWidget
 
         do_action('mphbe_before_search_form_widget_render', $atts);
 
-        $shortcode = new \MPHB\Shortcodes\SearchShortcode();
-        echo $shortcode->render($atts, null, MPHB()->getShortcodes()->getSearch()->getName());
+        $shortcode = MPHB()->getShortcodes()->getSearch();
+        echo $shortcode->render($atts, null, $shortcode->getName());
 
         do_action('mphbe_after_search_form_widget_render', $atts);
 

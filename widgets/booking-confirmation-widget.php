@@ -54,8 +54,8 @@ class BookingConfirmationWidget extends AbstractWidget
 
         do_action('mphbe_before_booking_conformation_widget_render', $atts);
 
-        $shortcode = new \MPHB\Shortcodes\BookingConfirmationShortcode();
-        echo $shortcode->render($atts, null, MPHB()->getShortcodes()->getBookingConfirmation()->getName());
+        $shortcode = MPHB()->getShortcodes()->getBookingConfirmation();
+        echo $shortcode->render($atts, null, $shortcode->getName());
 
         do_action('mphbe_after_booking_conformation_widget_render', $atts);
 
