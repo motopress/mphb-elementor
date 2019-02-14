@@ -21,15 +21,19 @@ abstract class AbstractGalleryWidget extends AbstractWidget
      */
     protected function render()
     {
-        if (isset($_REQUEST['action']) && $_REQUEST['action'] == 'elementor_render_widget') {
-            // Add initialization script
-            echo '<script>'
-                    // Search only not inited sliders
-                    . 'jQuery(".mphb-flexslider-gallery-wrapper:not(.mphb-flexslider)").each(function (index, wrapper) {'
-                        . 'var gallery = new MPHB.FlexsliderGallery(wrapper);'
-                        . 'gallery.initSliders();'
-                    . '});'
-                . '</script>';
+        $action = isset($_REQUEST['action']) ? $_REQUEST['action'] : '';
+
+        if ( in_array($action, array('elementor_render_widget', 'elementor_ajax', 'elementor')) ) {
+            $script = 'jQuery(".mphb-flexslider-gallery-wrapper:not(.mphb-flexslider)").each(function (index, wrapper) {'
+                . 'var gallery = new MPHB.FlexsliderGallery(wrapper);'
+                . 'gallery.initSliders();'
+            . '});';
+
+            if ($action == 'elementor') {
+                $script = 'jQuery(document).ready(function () {' . $script . '});';
+            }
+
+            echo '<script>', $script, '</script>';
         }
     }
 }
