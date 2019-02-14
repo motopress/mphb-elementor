@@ -34,6 +34,7 @@ class MPHBElementor
         }
 
         add_action('elementor/init', array($this, 'registerCategories'));
+        add_action('elementor/init', array($this, 'addAvailableRoomsData'));
         add_action('elementor/widgets/widgets_registered', array($this, 'registerWidgets'));
         add_action('elementor/preview/enqueue_styles', array($this, 'enqueuePreviewStyles'));
     }
@@ -73,6 +74,7 @@ class MPHBElementor
     {
         require __DIR__ . '/widgets/abstract-widget.php';
         require __DIR__ . '/widgets/abstract-gallery-widget.php';
+        require __DIR__ . '/widgets/abstract-calendar-widget.php';
         require __DIR__ . '/widgets/search-form-widget.php';
         require __DIR__ . '/widgets/search-results-widget.php';
         require __DIR__ . '/widgets/rooms-widget.php';
@@ -82,6 +84,7 @@ class MPHBElementor
         require __DIR__ . '/widgets/availability-widget.php';
         require __DIR__ . '/widgets/booking-confirmation-widget.php';
         require __DIR__ . '/widgets/checkout-widget.php';
+        require __DIR__ . '/widgets/availability-calendar-widget.php';
 
         $widgetsManager->register_widget_type(new \mphbe\widgets\SearchFormWidget());
         $widgetsManager->register_widget_type(new \mphbe\widgets\SearchResultsWidget());
@@ -92,11 +95,21 @@ class MPHBElementor
         $widgetsManager->register_widget_type(new \mphbe\widgets\AvailabilityWidget());
         $widgetsManager->register_widget_type(new \mphbe\widgets\BookingConfirmationWidget());
         $widgetsManager->register_widget_type(new \mphbe\widgets\CheckoutWidget());
+        $widgetsManager->register_widget_type(new \mphbe\widgets\AvailabilityCalendarWidget());
     }
 
     public function enqueuePreviewStyles()
     {
         wp_enqueue_style('mphb-flexslider-css');
+    }
+
+    public function addAvailableRoomsData()
+    {
+        $roomTypes = MPHB()->getRoomTypePersistence()->getPosts(array(
+            'post_status' => mphb_readable_post_statuses()
+        ));
+
+        array_walk($roomTypes, array(MPHB()->getPublicScriptManager(), 'addRoomTypeData'));
     }
 
     public static function create()
