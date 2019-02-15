@@ -110,21 +110,76 @@ class SearchResultsWidget extends AbstractWidget
             )
         ));
 
-        $this->add_control('default_sorting', array(
-            'type'        => Controls_Manager::SELECT,
-            'label'       => __('Sort by', 'mphb-elementor'),
-            'default'     => 'order',
-            'options'     => array(
-                'order'         => __('Order', 'mphb-elementor'),
-                'price'         => __('Price', 'mphb-elementor')
-            )
-        ));
-
         $this->add_control('class', array(
             'type'        => Controls_Manager::TEXT,
             'label'       => __('Class', 'mphb-elementor'),
             'description' => __('Custom CSS class for shortcode wrapper.', 'mphb-elementor'),
             'default'     => ''
+        ));
+
+        $this->end_controls_section();
+
+        $this->start_controls_section('section_order', array(
+            'label'       => __('Order', 'mphb-elementor')
+        ));
+
+        $this->add_control('orderby', array(
+            'type'        => Controls_Manager::SELECT,
+            'label'       => __('Order By', 'mphb-elementor'),
+            'default'     => 'menu_order',
+            'options'     => array(
+                'none'           => __('No order', 'mphb-elementor'),
+                'ID'             => __('Post ID', 'mphb-elementor'),
+                'author'         => __('Post author', 'mphb-elementor'),
+                'title'          => __('Post title', 'mphb-elementor'),
+                'name'           => __('Post name (post slug)', 'mphb-elementor'),
+                'date'           => __('Post date', 'mphb-elementor'),
+                'modified'       => __('Last modified date', 'mphb-elementor'),
+                'parent'         => __('Parent ID', 'mphb-elementor'),
+                'rand'           => __('Random order', 'mphb-elementor'),
+                'comment_count'  => __('Number of comments', 'mphb-elementor'),
+                'relevance'      => __('Relevance', 'mphb-elementor'),
+                'menu_order'     => __('Page order', 'mphb-elementor'),
+                'meta_value'     => __('Meta value', 'mphb-elementor'),
+                'meta_value_num' => __('Numeric meta value', 'mphb-elementor'),
+                'post__in'       => __('Price', 'mphb-elementor')
+            )
+        ));
+
+        $this->add_control('order', array(
+            'type'        => Controls_Manager::SELECT,
+            'label'       => __('Order', 'mphb-elementor'),
+            'default'     => 'DESC',
+            'options'     => array(
+                'ASC'            => __('Ascending (1, 2, 3)', 'mphb-elementor'),
+                'DESC'           => __('Descending (3, 2, 1)', 'mphb-elementor')
+            )
+        ));
+
+        $this->add_control('meta_key', array(
+            'type'        => Controls_Manager::TEXT,
+            'label'       => __('Meta Name', 'mphb-elementor'),
+            'description' => __('Custom field name. Required if "orderby" is one of the "meta_value", "meta_value_num" or "meta_value_*".', 'mphb-elementor'),
+            'default'     => ''
+        ));
+
+        $this->add_control('meta_type', array(
+            'type'        => Controls_Manager::SELECT,
+            'label'       => __('Meta Type', 'mphb-elementor'),
+            'description' => __('Specified type of the custom field. Can be used in conjunction with "orderby" = "meta_value".', 'mphb-elementor'),
+            'default'     => '',
+            'options'     => array(
+                ''               => __('Any', 'mphb-elementor'),
+                'NUMERIC'        => __('Numeric', 'mphb-elementor'),
+                'BINARY'         => __('Binary', 'mphb-elementor'),
+                'CHAR'           => __('String', 'mphb-elementor'),
+                'DATE'           => __('Date', 'mphb-elementor'),
+                'TIME'           => __('Time', 'mphb-elementor'),
+                'DATETIME'       => __('Date and time', 'mphb-elementor'),
+                'DECIMAL'        => __('Decimal number', 'mphb-elementor'),
+                'SIGNED'         => __('Signed number', 'mphb-elementor'),
+                'UNSIGNED'       => __('Unsigned number', 'mphb-elementor')
+            )
         ));
 
         $this->end_controls_section();
