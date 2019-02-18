@@ -2,8 +2,8 @@
 Contributors: MotoPress
 Donate link: https://motopress.com/
 Tags: hotel, booking, reservation, elementor, hotel booking
-Requires at least: 4.0
-Tested up to: 4.9
+Requires at least: 4.6
+Tested up to: 5.1
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -40,13 +40,17 @@ This plugin requires:
 
 == Copyright ==
 
-Hotel Booking & Elementor Integration plugin, Copyright (C) 2018, MotoPress https://motopress.com/
+Hotel Booking & Elementor Integration plugin, Copyright (C) 2019, MotoPress https://motopress.com/
 Hotel Booking & Elementor Integration plugin is distributed under the terms of the GNU GPL.
 
 
 == Changelog ==
 
-= 1.0.3, XXX =
+= 1.1.0, Feb 18 2019 =
+* Added sorting parameters to elements.
+* Added the Availability Calendar element.
+
+= 1.0.3 =
 * Added set of actions to be executed before and after Hotel Booking & Elementor Integration widgets render.
 
 = 1.0.2, Oct 16 2018 =
