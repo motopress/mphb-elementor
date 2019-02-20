@@ -46,6 +46,9 @@ Hotel Booking & Elementor Integration plugin is distributed under the terms of t
 
 == Changelog ==
 
+= 1.1.1, Feb 20 2019 =
+* Bug fix: improved compatibility with outdated versions of Hotel Booking.
+
 = 1.1.0, Feb 18 2019 =
 * Added sorting parameters to elements.
 * Added the Availability Calendar element.
