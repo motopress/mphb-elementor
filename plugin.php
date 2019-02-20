@@ -105,8 +105,14 @@ class MPHBElementor
 
     public function addAvailableRoomsData()
     {
+        $readableStatuses = array('publish');
+
+        if (current_user_can('read_private_posts')) {
+            $readableStatuses[] = 'private';
+        }
+
         $roomTypes = MPHB()->getRoomTypePersistence()->getPosts(array(
-            'post_status' => mphb_readable_post_statuses()
+            'post_status' => $readableStatuses
         ));
 
         array_walk($roomTypes, array(MPHB()->getPublicScriptManager(), 'addRoomTypeData'));
