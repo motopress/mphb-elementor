@@ -3,14 +3,14 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Hotel Booking\n"
-"POT-Creation-Date: 2018-10-16 12:22+0300\n"
+"POT-Creation-Date: 2019-02-18 14:50+0200\n"
 "PO-Revision-Date: 2017-02-10 17:51+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.1\n"
+"X-Generator: Poedit 2.2.1\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-WPHeader: mphb-elementor.php\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -21,14 +21,15 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: plugin.php:66
+#: plugin.php:67
 msgid "MotoPress Hotel Booking"
 msgstr ""
 
-#: widgets/availability-widget.php:16
-msgid "Booking Form"
+#: widgets/availability-calendar-widget.php:16
+msgid "Availability Calendar"
 msgstr ""
 
+#: widgets/availability-calendar-widget.php:33
 #: widgets/availability-widget.php:33
 #: widgets/booking-confirmation-widget.php:33 widgets/checkout-widget.php:33
 #: widgets/rates-widget.php:33 widgets/room-widget.php:33
@@ -37,29 +38,50 @@ msgstr ""
 msgid "Parameters"
 msgstr ""
 
+#: widgets/availability-calendar-widget.php:39
 #: widgets/availability-widget.php:39 widgets/rates-widget.php:39
 #: widgets/room-widget.php:39
 msgid "ID"
 msgstr ""
 
-#: widgets/availability-widget.php:40
-msgid "ID of Accommodation Type to check availability."
+#: widgets/availability-calendar-widget.php:40 widgets/rates-widget.php:40
+msgid "ID of accommodation type."
 msgstr ""
 
+#: widgets/availability-calendar-widget.php:46
+msgid "How many months to show"
+msgstr ""
+
+#: widgets/availability-calendar-widget.php:47
+msgid ""
+"Set the number of columns or the number of rows and columns separated by "
+"comma. Example: \"3\" or \"2,3\""
+msgstr ""
+
+#: widgets/availability-calendar-widget.php:53
 #: widgets/availability-widget.php:46
 #: widgets/booking-confirmation-widget.php:38 widgets/checkout-widget.php:38
 #: widgets/rates-widget.php:46 widgets/room-widget.php:134
 #: widgets/rooms-widget.php:134 widgets/search-form-widget.php:86
-#: widgets/search-results-widget.php:125 widgets/services-widget.php:53
+#: widgets/search-results-widget.php:115 widgets/services-widget.php:53
 msgid "Class"
 msgstr ""
 
+#: widgets/availability-calendar-widget.php:54
 #: widgets/availability-widget.php:47
 #: widgets/booking-confirmation-widget.php:39 widgets/checkout-widget.php:39
 #: widgets/rates-widget.php:47 widgets/room-widget.php:135
 #: widgets/rooms-widget.php:135 widgets/search-form-widget.php:87
-#: widgets/search-results-widget.php:126 widgets/services-widget.php:54
+#: widgets/search-results-widget.php:116 widgets/services-widget.php:54
 msgid "Custom CSS class for shortcode wrapper."
+msgstr ""
+
+#: widgets/availability-widget.php:16
+msgid "Booking Form"
+msgstr ""
+
+#: widgets/availability-widget.php:40
+msgid "ID of Accommodation Type to check availability."
 msgstr ""
 
 #: widgets/booking-confirmation-widget.php:16
@@ -72,10 +94,6 @@ msgstr ""
 
 #: widgets/rates-widget.php:16
 msgid "Accommodation Rates"
-msgstr ""
-
-#: widgets/rates-widget.php:40
-msgid "ID of accommodation type."
 msgstr ""
 
 #: widgets/room-widget.php:16
@@ -168,7 +186,8 @@ msgid "Whether to display details of the accommodation type."
 msgstr ""
 
 #: widgets/room-widget.php:101 widgets/rooms-widget.php:93
-#: widgets/search-results-widget.php:93 widgets/search-results-widget.php:119
+#: widgets/rooms-widget.php:196 widgets/search-results-widget.php:93
+#: widgets/search-results-widget.php:145 widgets/services-widget.php:83
 msgid "Price"
 msgstr ""
 
@@ -253,6 +272,172 @@ msgstr ""
 msgid "OR"
 msgstr ""
 
+#: widgets/rooms-widget.php:174 widgets/rooms-widget.php:202
+#: widgets/search-results-widget.php:123
+#: widgets/search-results-widget.php:151 widgets/services-widget.php:61
+#: widgets/services-widget.php:89
+msgid "Order"
+msgstr ""
+
+#: widgets/rooms-widget.php:179 widgets/search-results-widget.php:128
+#: widgets/services-widget.php:66
+msgid "Order By"
+msgstr ""
+
+#: widgets/rooms-widget.php:182 widgets/search-results-widget.php:131
+#: widgets/services-widget.php:69
+msgid "No order"
+msgstr ""
+
+#: widgets/rooms-widget.php:183 widgets/search-results-widget.php:132
+#: widgets/services-widget.php:70
+msgid "Post ID"
+msgstr ""
+
+#: widgets/rooms-widget.php:184 widgets/search-results-widget.php:133
+#: widgets/services-widget.php:71
+msgid "Post author"
+msgstr ""
+
+#: widgets/rooms-widget.php:185 widgets/search-results-widget.php:134
+#: widgets/services-widget.php:72
+msgid "Post title"
+msgstr ""
+
+#: widgets/rooms-widget.php:186 widgets/search-results-widget.php:135
+#: widgets/services-widget.php:73
+msgid "Post name (post slug)"
+msgstr ""
+
+#: widgets/rooms-widget.php:187 widgets/search-results-widget.php:136
+#: widgets/services-widget.php:74
+msgid "Post date"
+msgstr ""
+
+#: widgets/rooms-widget.php:188 widgets/search-results-widget.php:137
+#: widgets/services-widget.php:75
+msgid "Last modified date"
+msgstr ""
+
+#: widgets/rooms-widget.php:189 widgets/search-results-widget.php:138
+#: widgets/services-widget.php:76
+msgid "Parent ID"
+msgstr ""
+
+#: widgets/rooms-widget.php:190 widgets/search-results-widget.php:139
+#: widgets/services-widget.php:77
+msgid "Random order"
+msgstr ""
+
+#: widgets/rooms-widget.php:191 widgets/search-results-widget.php:140
+#: widgets/services-widget.php:78
+msgid "Number of comments"
+msgstr ""
+
+#: widgets/rooms-widget.php:192 widgets/search-results-widget.php:141
+#: widgets/services-widget.php:79
+msgid "Relevance"
+msgstr ""
+
+#: widgets/rooms-widget.php:193 widgets/search-results-widget.php:142
+#: widgets/services-widget.php:80
+msgid "Page order"
+msgstr ""
+
+#: widgets/rooms-widget.php:194 widgets/search-results-widget.php:143
+#: widgets/services-widget.php:81
+msgid "Meta value"
+msgstr ""
+
+#: widgets/rooms-widget.php:195 widgets/search-results-widget.php:144
+#: widgets/services-widget.php:82
+msgid "Numeric meta value"
+msgstr ""
+
+#: widgets/rooms-widget.php:205 widgets/search-results-widget.php:154
+#: widgets/services-widget.php:92
+msgid "Ascending (1, 2, 3)"
+msgstr ""
+
+#: widgets/rooms-widget.php:206 widgets/search-results-widget.php:155
+#: widgets/services-widget.php:93
+msgid "Descending (3, 2, 1)"
+msgstr ""
+
+#: widgets/rooms-widget.php:212 widgets/search-results-widget.php:161
+#: widgets/services-widget.php:99
+msgid "Meta Name"
+msgstr ""
+
+#: widgets/rooms-widget.php:213 widgets/search-results-widget.php:162
+#: widgets/services-widget.php:100
+msgid ""
+"Custom field name. Required if \"orderby\" is one of the \"meta_value\", "
+"\"meta_value_num\" or \"meta_value_*\"."
+msgstr ""
+
+#: widgets/rooms-widget.php:219 widgets/search-results-widget.php:168
+#: widgets/services-widget.php:106
+msgid "Meta Type"
+msgstr ""
+
+#: widgets/rooms-widget.php:220 widgets/search-results-widget.php:169
+#: widgets/services-widget.php:107
+msgid ""
+"Specified type of the custom field. Can be used in conjunction with "
+"\"orderby\" = \"meta_value\"."
+msgstr ""
+
+#: widgets/rooms-widget.php:223 widgets/search-results-widget.php:172
+#: widgets/services-widget.php:110
+msgid "Any"
+msgstr ""
+
+#: widgets/rooms-widget.php:224 widgets/search-results-widget.php:173
+#: widgets/services-widget.php:111
+msgid "Numeric"
+msgstr ""
+
+#: widgets/rooms-widget.php:225 widgets/search-results-widget.php:174
+#: widgets/services-widget.php:112
+msgid "Binary"
+msgstr ""
+
+#: widgets/rooms-widget.php:226 widgets/search-results-widget.php:175
+#: widgets/services-widget.php:113
+msgid "String"
+msgstr ""
+
+#: widgets/rooms-widget.php:227 widgets/search-results-widget.php:176
+#: widgets/services-widget.php:114
+msgid "Date"
+msgstr ""
+
+#: widgets/rooms-widget.php:228 widgets/search-results-widget.php:177
+#: widgets/services-widget.php:115
+msgid "Time"
+msgstr ""
+
+#: widgets/rooms-widget.php:229 widgets/search-results-widget.php:178
+#: widgets/services-widget.php:116
+msgid "Date and time"
+msgstr ""
+
+#: widgets/rooms-widget.php:230 widgets/search-results-widget.php:179
+#: widgets/services-widget.php:117
+msgid "Decimal number"
+msgstr ""
+
+#: widgets/rooms-widget.php:231 widgets/search-results-widget.php:180
+#: widgets/services-widget.php:118
+msgid "Signed number"
+msgstr ""
+
+#: widgets/rooms-widget.php:232 widgets/search-results-widget.php:181
+#: widgets/services-widget.php:119
+msgid "Unsigned number"
+msgstr ""
+
 #: widgets/search-form-widget.php:16
 msgid "Search Availability Form"
 msgstr ""
@@ -303,14 +488,6 @@ msgstr ""
 
 #: widgets/search-results-widget.php:16
 msgid "Search Results"
-msgstr ""
-
-#: widgets/search-results-widget.php:115
-msgid "Sort by"
-msgstr ""
-
-#: widgets/search-results-widget.php:118
-msgid "Order"
 msgstr ""
 
 #: widgets/services-widget.php:16
