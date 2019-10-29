@@ -148,7 +148,15 @@ class RoomWidget extends AbstractGalleryWidget
     {
 
         $atts = $this->get_settings();
-        $atts['id'] = (empty($atts['type_id']) ? 0 : $atts['type_id']);
+        $atts['id'] = 0;
+
+        if(!empty($atts['type_id'])){
+        	$atts['id'] = $atts['type_id'];
+        }
+
+        if(empty($atts['type_id']) && is_singular(MPHB()->postTypes()->roomType()->getPostType())){
+	        $atts['id'] = MPHB()->getCurrentRoomType()->getId();
+        }
 
         do_action('mphbe_before_room_widget_render', $atts);
 

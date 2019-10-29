@@ -62,6 +62,10 @@ class RatesWidget extends AbstractWidget
         $atts = $this->get_settings();
         $atts['id'] = $atts['type_id'];
 
+	    if(empty($atts['type_id']) && is_singular(MPHB()->postTypes()->roomType()->getPostType())){
+		    $atts['id'] = MPHB()->getCurrentRoomType()->getId();
+	    }
+
         do_action('mphbe_before_rates_widget_render', $atts);
 
         $shortcode = MPHB()->getShortcodes()->getRoomRates();
