@@ -17,6 +17,8 @@ if (!defined('ABSPATH')) {
 }
 
 add_action('plugins_loaded', function () {
+    define( 'MPHB_ELEMENTOR_PLUGIN_FILE', __FILE__ );
+
     require __DIR__ . '/plugin.php';
     MPHBElementor::create();
 });
