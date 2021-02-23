@@ -1,9 +1,10 @@
 === Hotel Booking & Elementor Integration ===
 Contributors: MotoPress
 Donate link: https://motopress.com/
-Tags: hotel, booking, reservation, elementor, hotel booking
+Tags: hotel, booking, reservation, elementor, hotel booking, booking form
 Requires at least: 4.6
 Tested up to: 5.6
+Requires PHP: 5.6
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -25,6 +26,10 @@ This plugin requires:
 * [Elementor Page Builder](https://wordpress.org/plugins/elementor/).
 * [Motopress Hotel Booking Lite](https://wordpress.org/plugins/motopress-hotel-booking-lite/) or MotoPress Hotel Booking Pro.
 
+= Popular Addons for Elementor by Stratum =
+
+* Stratum [Elementor Widgets](https://wordpress.org/plugins/stratum/): add 20+ powerful and creative Elementor widgets to your site building toolkit.
+* Stratum [Elementor Mega Menu](https://motopress.com/products/stratum-menu/?utm_source=wp-org&utm_medium=textlink&utm_campaign=hotel-booking-elementor-integration): build content-rich navigation menus in Elementor.
 
 == Installation ==
 
@@ -45,6 +50,9 @@ Hotel Booking & Elementor Integration plugin is distributed under the terms of t
 
 
 == Changelog ==
+
+= 1.1.2, Feb 24 2021 =
+* Added the ability to set horizontal layout of the Booking and Search Availability forms. The Hotel Booking Styles plugin is required for this feature.
 
 = 1.1.1, Feb 20 2019 =
 * Bug fix: improved compatibility with outdated versions of Hotel Booking.
