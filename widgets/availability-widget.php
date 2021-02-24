@@ -59,7 +59,19 @@ class AvailabilityWidget extends AbstractWidget
     protected function render()
     {
         $atts = $this->get_settings();
-        $atts['id'] = $atts['type_id'];
+
+        $atts[ 'id' ]     = $atts[ 'type_id' ];
+
+        $atts[ 'class' ]  = ! empty( $atts[ 'widget_styles' ] ) ? $atts[ 'widget_styles' ] : '';
+        $atts[ 'class' ] .= ! empty( $atts[ 'hide_labels' ] ) ? $atts[ 'hide_labels' ] === 'yes' ? 'mphbs-hide-labels ' : '' : '';
+        $atts[ 'class' ] .= ! empty( $atts[ 'no_paddings' ] ) ? $atts[ 'no_paddings' ] === 'yes' ? 'mphbs-no-paddings ' : '' : '';
+        $atts[ 'class' ] .= ! empty( $atts[ 'hide_tips' ] ) ? $atts[ 'hide_tips' ] === 'yes' ? 'mphbs-hide-rf-tip ' : '' : '';
+        $atts[ 'class' ] .= ! empty( $atts[ 'stretch_btn' ] ) ? $atts[ 'stretch_btn' ] === 'yes' ? 'mphbs-fluid-button ' : '' : '';
+        $atts[ 'class' ] .= ! empty( $atts[ 'fields_width' ] ) ? $atts[ 'fields_width' ] : '';
+
+        if ( MPHB()->settings()->main()->isDirectBooking() ) {
+            $atts[ 'class' ] .= 'is-direct-booking ';
+        }
 
         do_action('mphbe_before_availability_widget_render', $atts);
 
