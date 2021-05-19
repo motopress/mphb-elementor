@@ -101,6 +101,8 @@ class SearchFormWidget extends AbstractWidget
 
         $atts = $this->get_settings();
 
+        $className = ! empty( $atts[ 'class' ] ) ? $atts[ 'class' ] : '';
+
         $atts[ 'class' ]  = ! empty( $atts[ 'widget_styles' ] ) ? $atts[ 'widget_styles' ] : '';
         $atts[ 'class' ] .= ! empty( $atts[ 'hide_labels' ] ) ? $atts[ 'hide_labels' ] === 'yes' ? 'mphbs-hide-labels ' : '' : '';
         $atts[ 'class' ] .= ! empty( $atts[ 'no_paddings' ] ) ? $atts[ 'no_paddings' ] === 'yes' ? 'mphbs-no-paddings ' : '' : '';
@@ -108,10 +110,7 @@ class SearchFormWidget extends AbstractWidget
         $atts[ 'class' ] .= ! empty( $atts[ 'multiple_lines' ] ) ? $atts[ 'multiple_lines' ] === 'yes' ? 'mphbs-wrap ' : '' : '';
         $atts[ 'class' ] .= ! empty( $atts[ 'stretch_btn' ] ) ? $atts[ 'stretch_btn' ] === 'yes' ? 'mphbs-fluid-button ' : '' : '';
         $atts[ 'class' ] .= ! empty( $atts[ 'fields_width' ] ) ? $atts[ 'fields_width' ] : '';
-
-        if ( MPHB()->settings()->main()->isDirectBooking() ) {
-            $atts[ 'class' ] .= 'is-direct-booking ';
-        }
+        $atts[ 'class' ] .= $className;
 
         do_action('mphbe_before_search_form_widget_render', $atts);
 
