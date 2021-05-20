@@ -3,7 +3,7 @@ Contributors: MotoPress
 Donate link: https://motopress.com/
 Tags: hotel, booking, reservation, elementor, hotel booking, booking form
 Requires at least: 4.6
-Tested up to: 5.6
+Tested up to: 5.7
 Requires PHP: 5.6
 Stable tag: trunk
 License: GPLv2 or later
@@ -50,6 +50,9 @@ Hotel Booking & Elementor Integration plugin is distributed under the terms of t
 
 
 == Changelog ==
+
+= 1.1.3, May 20 2021 =
+* Minor bugfixes and improvements
 
 = 1.1.2, Feb 24 2021 =
 * Added the ability to set horizontal layout of the Booking and Search Availability forms. The Hotel Booking Styles plugin is required for this feature.
