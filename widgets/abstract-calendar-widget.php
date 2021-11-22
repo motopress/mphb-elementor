@@ -11,7 +11,7 @@ abstract class AbstractCalendarWidget extends AbstractWidget
      */
     protected function render()
     {
-        $action = isset($_REQUEST['action']) ? $_REQUEST['action'] : '';
+		$action = isset($_REQUEST['action']) ? sanitize_text_field( wp_unslash( $_REQUEST['action'] ) ) : '';
 
         if ( in_array($action, array('elementor_render_widget', 'elementor_ajax', 'elementor')) ) {
             $script = 'jQuery(".mphb-calendar.mphb-datepick:not(.is-datepick)").each(function (_, element) {'
@@ -22,7 +22,7 @@ abstract class AbstractCalendarWidget extends AbstractWidget
                 $script = 'jQuery(document).ready(function () {' . $script . '});';
             }
 
-            echo '<script>', $script, '</script>';
+            echo '<script>', $script, '</script>'; // phpcs:ignore
         }
     }
 }

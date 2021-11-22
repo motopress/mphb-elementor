@@ -75,7 +75,7 @@ class AvailabilityWidget extends AbstractWidget
         do_action('mphbe_before_availability_widget_render', $atts);
 
         $shortcode = MPHB()->getShortcodes()->getBookingForm();
-        echo $shortcode->render($atts, null, $shortcode->getName());
+        echo $shortcode->render($atts, null, $shortcode->getName()); // phpcs:ignore
 
         do_action('mphbe_after_availability_widget_render', $atts);
 

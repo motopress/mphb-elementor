@@ -69,7 +69,7 @@ class RatesWidget extends AbstractWidget
         do_action('mphbe_before_rates_widget_render', $atts);
 
         $shortcode = MPHB()->getShortcodes()->getRoomRates();
-        echo $shortcode->render($atts, null, $shortcode->getName());
+        echo $shortcode->render($atts, null, $shortcode->getName()); // phpcs:ignore
 
         do_action('mphbe_after_rates_widget_render', $atts);
 

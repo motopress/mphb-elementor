@@ -72,7 +72,7 @@ class AvailabilityCalendarWidget extends AbstractCalendarWidget
         do_action('mphbe_before_availability_calendar_widget_render', $atts);
 
         $shortcode = MPHB()->getShortcodes()->getAvailabilityCalendar();
-        echo $shortcode->render($atts, null, $shortcode->getName());
+        echo $shortcode->render($atts, null, $shortcode->getName()); // phpcs:ignore
         parent::render();
 
         do_action('mphbe_after_availability_calendar_widget_render', $atts);
