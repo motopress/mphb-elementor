@@ -115,7 +115,7 @@ class SearchFormWidget extends AbstractWidget
         do_action('mphbe_before_search_form_widget_render', $atts);
 
         $shortcode = MPHB()->getShortcodes()->getSearch();
-        echo $shortcode->render($atts, null, $shortcode->getName());
+        echo $shortcode->render($atts, null, $shortcode->getName()); // phpcs:ignore
 
         do_action('mphbe_after_search_form_widget_render', $atts);
 
