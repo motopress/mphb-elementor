@@ -3,7 +3,7 @@ Contributors: MotoPress
 Donate link: https://motopress.com/
 Tags: hotel, booking, reservation, elementor, hotel booking, booking form
 Requires at least: 4.6
-Tested up to: 5.8
+Tested up to: 6.0
 Requires PHP: 5.6
 Stable tag: 1.1.4
 License: GPLv2 or later
@@ -50,6 +50,9 @@ Hotel Booking & Elementor Integration plugin is distributed under the terms of t
 
 
 == Changelog ==
+
+= 1.1.5, Oct 7 2022 =
+* Added support for price conversion in the availability calendar.
 
 = 1.1.4, Nov 23 2021 =
 * Security - sanitization and escaping.
