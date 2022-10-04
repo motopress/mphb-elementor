@@ -58,7 +58,7 @@ class AvailabilityCalendarWidget extends AbstractCalendarWidget {
 			array(
 				'type'        => Controls_Manager::SWITCHER,
 				'label'       => __( 'Display prices', 'mphb-elementor' ),
-				'description' => __( 'Display price per night in the availability calendar.', 'mphb-elementor' ),
+				'description' => __( 'Display per-night prices in the availability calendar.', 'mphb-elementor' ),
 				'default'     => false,
 			)
 		);
@@ -68,7 +68,7 @@ class AvailabilityCalendarWidget extends AbstractCalendarWidget {
 			array(
 				'type'        => Controls_Manager::SWITCHER,
 				'label'       => __( 'Truncate prices', 'mphb-elementor' ),
-				'description' => __( 'Truncate prices in the availability calendar.', 'mphb-elementor' ),
+				'description' => __( 'Truncate per-night prices in the availability calendar.', 'mphb-elementor' ),
 				'default'     => true,
 			)
 		);
@@ -78,7 +78,7 @@ class AvailabilityCalendarWidget extends AbstractCalendarWidget {
 			array(
 				'type'        => Controls_Manager::SWITCHER,
 				'label'       => __( 'Display currency', 'mphb-elementor' ),
-				'description' => __( 'Display currency in the availability calendar.', 'mphb-elementor' ),
+				'description' => __( 'Display the currency sign in the availability calendar.', 'mphb-elementor' ),
 				'default'     => false,
 			)
 		);
