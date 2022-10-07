@@ -24,7 +24,7 @@ class AvailabilityCalendarWidget extends AbstractCalendarWidget {
 	 * Adds different input fields to allow the user to change and customize the
 	 * widget settings.
 	 */
-	protected function _register_controls() {
+	protected function register_controls() {
 		$this->start_controls_section(
 			'section_parameters',
 			array(

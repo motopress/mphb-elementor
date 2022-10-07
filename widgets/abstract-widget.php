@@ -33,5 +33,5 @@ abstract class AbstractWidget extends Widget_Base
      * Written as a Backbone JavaScript template and used to generate the live
      * preview.
      */
-    protected function _content_template() {}
+    protected function content_template() {}
 }
