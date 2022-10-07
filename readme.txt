@@ -52,7 +52,7 @@ Hotel Booking & Elementor Integration plugin is distributed under the terms of t
 == Changelog ==
 
 = 1.1.5, Oct 7 2022 =
-* Added support for display prices in the availability calendar.
+* Added support for displaying prices in the availability calendars.
 
 = 1.1.4, Nov 23 2021 =
 * Security - sanitization and escaping.
