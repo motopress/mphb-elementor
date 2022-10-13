@@ -104,7 +104,7 @@ class AvailabilityCalendarWidget extends AbstractCalendarWidget {
 
 		$atts                     = $this->get_settings();
 		$atts['id']               = absint( $atts['type_id'] );
-		$atts['monthstoshow']     = absint( $atts['monthstoshow'] );
+		$atts['monthstoshow']     = sanitize_text_field( $atts['monthstoshow'] );
 		$atts['display_price']    = boolval( $atts['display_price'] );
 		$atts['truncate_price']   = boolval( $atts['truncate_price'] );
 		$atts['display_currency'] = boolval( $atts['display_currency'] );
