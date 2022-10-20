@@ -1,17 +1,17 @@
-# Copyright (C) 2021 MotoPress
-# This file is distributed under the same license as the Hotel Booking & Elementor Integration plugin.
+# Copyright (C) 2022 MotoPress
+# This file is distributed under the GPLv2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Hotel Booking & Elementor Integration 1.1.4\n"
+"Project-Id-Version: Hotel Booking & Elementor Integration 1.1.5\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/mphb-elementor\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-11-22T23:17:12+00:00\n"
+"POT-Creation-Date: 2022-10-04T06:20:10+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.4.0\n"
+"X-Generator: WP-CLI 2.6.0\n"
 "X-Domain: mphb-elementor\n"
 
 #. Plugin Name of the plugin
@@ -38,11 +38,11 @@ msgstr ""
 msgid "MotoPress Hotel Booking"
 msgstr ""
 
-#: widgets/availability-calendar-widget.php:16
+#: widgets/availability-calendar-widget.php:14
 msgid "Availability Calendar"
 msgstr ""
 
-#: widgets/availability-calendar-widget.php:33
+#: widgets/availability-calendar-widget.php:31
 #: widgets/availability-widget.php:33
 #: widgets/booking-confirmation-widget.php:33
 #: widgets/checkout-widget.php:33
@@ -55,27 +55,51 @@ msgstr ""
 msgid "Parameters"
 msgstr ""
 
-#: widgets/availability-calendar-widget.php:39
+#: widgets/availability-calendar-widget.php:40
 #: widgets/availability-widget.php:39
 #: widgets/rates-widget.php:39
 #: widgets/room-widget.php:39
 msgid "ID"
 msgstr ""
 
-#: widgets/availability-calendar-widget.php:40
+#: widgets/availability-calendar-widget.php:41
 #: widgets/rates-widget.php:40
 msgid "ID of accommodation type."
 msgstr ""
 
-#: widgets/availability-calendar-widget.php:46
+#: widgets/availability-calendar-widget.php:50
 msgid "How many months to show"
 msgstr ""
 
-#: widgets/availability-calendar-widget.php:47
+#: widgets/availability-calendar-widget.php:51
 msgid "Set the number of columns or the number of rows and columns separated by comma. Example: \"3\" or \"2,3\""
 msgstr ""
 
-#: widgets/availability-calendar-widget.php:53
+#: widgets/availability-calendar-widget.php:60
+msgid "Display prices"
+msgstr ""
+
+#: widgets/availability-calendar-widget.php:61
+msgid "Display per-night prices in the availability calendar."
+msgstr ""
+
+#: widgets/availability-calendar-widget.php:70
+msgid "Truncate prices"
+msgstr ""
+
+#: widgets/availability-calendar-widget.php:71
+msgid "Truncate per-night prices in the availability calendar."
+msgstr ""
+
+#: widgets/availability-calendar-widget.php:80
+msgid "Display currency"
+msgstr ""
+
+#: widgets/availability-calendar-widget.php:81
+msgid "Display the currency sign in the availability calendar."
+msgstr ""
+
+#: widgets/availability-calendar-widget.php:90
 #: widgets/availability-widget.php:46
 #: widgets/booking-confirmation-widget.php:38
 #: widgets/checkout-widget.php:38
@@ -88,7 +112,7 @@ msgstr ""
 msgid "Class"
 msgstr ""
 
-#: widgets/availability-calendar-widget.php:54
+#: widgets/availability-calendar-widget.php:91
 #: widgets/availability-widget.php:47
 #: widgets/booking-confirmation-widget.php:39
 #: widgets/checkout-widget.php:39
