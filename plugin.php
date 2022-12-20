@@ -8,6 +8,8 @@ class MPHBElementor
 {
     const SLUG = 'mphb-elementor';
 
+	const WIDGET_CATEGORY_NAME = 'motopress-hotel-booking';
+
     private static $instance = null;
 
     private function __construct() {
@@ -33,11 +35,32 @@ class MPHBElementor
             return;
         }
 
-        add_action('elementor/init', array($this, 'registerCategories'));
+	    if ($this->isActiveLegacyElementor()) {
+		    if (!version_compare(ELEMENTOR_VERSION, '2.2.4', '>=')) {
+			    add_action('elementor/init', array($this, 'registerCategoriesLegacy'), 10);
+		    }
+
+		    add_action('elementor/elements/categories_registered', array($this, 'registerCategoriesLegacy'), 10);
+		    add_action('elementor/widgets/widgets_registered', array($this, 'registerWidgetsLegacy'), 10);
+	    } else {
+		    add_filter('elementor/elements/categories_registered', array($this, 'registerCategories'), 10, 1);
+		    add_filter('elementor/widgets/register', array($this, 'registerWidgets'), 10, 1);
+	    }
+
         add_action('elementor/init', array($this, 'addAvailableRoomsData'));
-        add_action('elementor/widgets/widgets_registered', array($this, 'registerWidgets'));
         add_action('elementor/preview/enqueue_styles', array($this, 'enqueuePreviewStyles'));
     }
+
+	/**
+	 * @return bool
+	 */
+	protected function isActiveLegacyElementor() {
+		if (version_compare(ELEMENTOR_VERSION, '3.5.0', '>=' )) {
+			return false;
+		}
+
+		return true;
+	}
 
     public function loadTextdomain()
     {
@@ -55,14 +78,29 @@ class MPHBElementor
         load_plugin_textdomain(self::SLUG, false, self::SLUG . '/languages');
     }
 
+	/**
+	 * Note that the categories are displayed in the widgets panel, only if they
+	 * have widgets assigned to them.
+	 */
+	public function registerCategoriesLegacy()
+	{
+		\Elementor\Plugin::instance()->elements_manager->add_category(
+			self::WIDGET_CATEGORY_NAME,
+			array(
+				'title' => __('MotoPress Hotel Booking', 'mphb-elementor'),
+				'icon'  => 'fa fa-plug'
+			)
+		);
+	}
+
     /**
      * Note that the categories are displayed in the widgets panel, only if they
      * have widgets assigned to them.
      */
-    public function registerCategories()
-    {
-        \Elementor\Plugin::instance()->elements_manager->add_category(
-            'motopress-hotel-booking',
+	public function registerCategories( $elementsManager )
+	{
+		$elementsManager->add_category(
+            self::WIDGET_CATEGORY_NAME,
             array(
                 'title' => __('MotoPress Hotel Booking', 'mphb-elementor'),
                 'icon'  => 'fa fa-plug'
@@ -70,32 +108,48 @@ class MPHBElementor
         );
     }
 
+	protected function widgets()
+	{
+		require __DIR__ . '/widgets/abstract-widget.php';
+		require __DIR__ . '/widgets/abstract-gallery-widget.php';
+		require __DIR__ . '/widgets/abstract-calendar-widget.php';
+		require __DIR__ . '/widgets/search-form-widget.php';
+		require __DIR__ . '/widgets/search-results-widget.php';
+		require __DIR__ . '/widgets/rooms-widget.php';
+		require __DIR__ . '/widgets/room-widget.php';
+		require __DIR__ . '/widgets/services-widget.php';
+		require __DIR__ . '/widgets/rates-widget.php';
+		require __DIR__ . '/widgets/availability-widget.php';
+		require __DIR__ . '/widgets/booking-confirmation-widget.php';
+		require __DIR__ . '/widgets/checkout-widget.php';
+		require __DIR__ . '/widgets/availability-calendar-widget.php';
+
+		return array(
+			new \mphbe\widgets\SearchFormWidget(),
+			new \mphbe\widgets\SearchResultsWidget(),
+			new \mphbe\widgets\RoomsWidget(),
+			new \mphbe\widgets\RoomWidget(),
+			new \mphbe\widgets\ServicesWidget(),
+			new \mphbe\widgets\RatesWidget(),
+			new \mphbe\widgets\AvailabilityWidget(),
+			new \mphbe\widgets\BookingConfirmationWidget(),
+			new \mphbe\widgets\CheckoutWidget(),
+			new \mphbe\widgets\AvailabilityCalendarWidget(),
+		);
+	}
+
+    public function registerWidgetsLegacy()
+    {
+	    foreach ( $this->widgets() as $widget ) {
+		    \Elementor\Plugin::instance()->widgets_manager->register_widget_type( $widget );
+	    }
+    }
+
     public function registerWidgets($widgetsManager)
     {
-        require __DIR__ . '/widgets/abstract-widget.php';
-        require __DIR__ . '/widgets/abstract-gallery-widget.php';
-        require __DIR__ . '/widgets/abstract-calendar-widget.php';
-        require __DIR__ . '/widgets/search-form-widget.php';
-        require __DIR__ . '/widgets/search-results-widget.php';
-        require __DIR__ . '/widgets/rooms-widget.php';
-        require __DIR__ . '/widgets/room-widget.php';
-        require __DIR__ . '/widgets/services-widget.php';
-        require __DIR__ . '/widgets/rates-widget.php';
-        require __DIR__ . '/widgets/availability-widget.php';
-        require __DIR__ . '/widgets/booking-confirmation-widget.php';
-        require __DIR__ . '/widgets/checkout-widget.php';
-        require __DIR__ . '/widgets/availability-calendar-widget.php';
-
-        $widgetsManager->register_widget_type(new \mphbe\widgets\SearchFormWidget());
-        $widgetsManager->register_widget_type(new \mphbe\widgets\SearchResultsWidget());
-        $widgetsManager->register_widget_type(new \mphbe\widgets\RoomsWidget());
-        $widgetsManager->register_widget_type(new \mphbe\widgets\RoomWidget());
-        $widgetsManager->register_widget_type(new \mphbe\widgets\ServicesWidget());
-        $widgetsManager->register_widget_type(new \mphbe\widgets\RatesWidget());
-        $widgetsManager->register_widget_type(new \mphbe\widgets\AvailabilityWidget());
-        $widgetsManager->register_widget_type(new \mphbe\widgets\BookingConfirmationWidget());
-        $widgetsManager->register_widget_type(new \mphbe\widgets\CheckoutWidget());
-        $widgetsManager->register_widget_type(new \mphbe\widgets\AvailabilityCalendarWidget());
+	    foreach ( $this->widgets() as $widget ) {
+		    $widgetsManager->register( $widget );
+	    }
     }
 
     public function enqueuePreviewStyles()
