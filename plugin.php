@@ -1,83 +1,80 @@
 <?php
 
-if (!defined('ABSPATH')) {
-    exit('Press Enter to proceed...');
+if ( ! defined( 'ABSPATH' ) ) {
+	exit( 'Press Enter to proceed...' );
 }
 
-class MPHBElementor
-{
-    const SLUG = 'mphb-elementor';
+class MPHBElementor {
 
+	const SLUG = 'mphb-elementor';
 	const WIDGET_CATEGORY_NAME = 'motopress-hotel-booking';
 
-    private static $instance = null;
-
-    private function __construct() {
-        $this->addActions();
-    }
-
-    private function addActions()
-    {
-        add_action('plugins_loaded', array($this, 'loadTextdomain'));
-
-        // Check if the MotoPress Hotel Booking is active
-        if (!class_exists('HotelBookingPlugin')) {
-            return;
-        }
-
-        // Check if the Elementor is active
-        if (!did_action('elementor/loaded')) {
-            return;
-        }
-
-        // Check required version
-        if (! version_compare(ELEMENTOR_VERSION, '3.5.0', '>=' )) {
-            return;
-        }
-
-        add_filter('elementor/elements/categories_registered', array($this, 'registerCategories'), 10, 1);
-        add_filter('elementor/widgets/register', array($this, 'registerWidgets'), 10, 1);
-
-        add_action('elementor/init', array($this, 'addAvailableRoomsData'));
-        add_action('elementor/preview/enqueue_styles', array($this, 'enqueuePreviewStyles'));
-    }
+	private static $instance = null;
 
 
-    public function loadTextdomain()
-    {
-        global $wp_version;
+	private function __construct() {
 
-        $isWp47 = version_compare($wp_version, '4.7', '>=');
+        add_action( 'plugins_loaded', array( $this, 'loadTextdomain' ) );
 
-        $locale = $isWp47 ? get_user_locale() : get_locale();
-        $locale = apply_filters('plugin_locale', $locale, self::SLUG);
+		// Check if the MotoPress Hotel Booking is active
+		if ( ! class_exists( 'HotelBookingPlugin' ) ) {
+			return;
+		}
 
-        // wp-content/languages/mphb-elementor/mphb-elementor-{lang}_{locale}.mo
-        $moFile = sprintf('%1$s/%2$s/%2$s-%3$s.mo', WP_LANG_DIR, self::SLUG, $locale);
+		// Check if the Elementor is active
+		if ( ! did_action( 'elementor/loaded' ) ) {
+			return;
+		}
 
-        load_textdomain(self::SLUG, $moFile);
-        load_plugin_textdomain(self::SLUG, false, self::SLUG . '/languages');
-    }
+		// Check required version
+		if ( ! version_compare( ELEMENTOR_VERSION, '3.5.0', '>=' ) ) {
+			return;
+		}
+
+		add_filter( 'elementor/elements/categories_registered', array( $this, 'registerCategories' ), 10, 1 );
+		add_filter( 'elementor/widgets/register', array( $this, 'registerWidgets' ), 10, 1 );
+
+		add_action( 'elementor/init', array( $this, 'addAvailableRoomsData' ) );
+		add_action( 'elementor/preview/enqueue_styles', array( $this, 'enqueuePreviewStyles' ) );
+
+	}
 
 
-    /**
-     * Note that the categories are displayed in the widgets panel, only if they
-     * have widgets assigned to them.
-     * @param \Elementor\Elements_Manager
-     */
-	public function registerCategories( $elementsManager )
-	{
+	public function loadTextdomain() {
+
+		global $wp_version;
+
+		$isWp47 = version_compare( $wp_version, '4.7', '>=' );
+
+		$locale = $isWp47 ? get_user_locale() : get_locale();
+		$locale = apply_filters( 'plugin_locale', $locale, self::SLUG );
+
+		// wp-content/languages/mphb-elementor/mphb-elementor-{lang}_{locale}.mo
+		$moFile = sprintf( '%1$s/%2$s/%2$s-%3$s.mo', WP_LANG_DIR, self::SLUG, $locale );
+
+		load_textdomain( self::SLUG, $moFile );
+		load_plugin_textdomain( self::SLUG, false, self::SLUG . '/languages' );
+	}
+
+
+	/**
+	 * Note that the categories are displayed in the widgets panel, only if they
+	 * have widgets assigned to them.
+	 * @param \Elementor\Elements_Manager
+	 */
+	public function registerCategories( $elementsManager ) {
+
 		$elementsManager->add_category(
-            self::WIDGET_CATEGORY_NAME,
-            array(
-                'title' => __('MotoPress Hotel Booking', 'mphb-elementor'),
-                'icon'  => 'fa fa-plug'
-            )
-        );
-    }
+			self::WIDGET_CATEGORY_NAME,
+			array(
+				'title' => __( 'MotoPress Hotel Booking', 'mphb-elementor' ),
+				'icon'  => 'fa fa-plug',
+			)
+		);
+	}
 
-	protected function widgets()
-	{
+	protected function widgets() {
+
 		require __DIR__ . '/widgets/abstract-widget.php';
 		require __DIR__ . '/widgets/abstract-gallery-widget.php';
 		require __DIR__ . '/widgets/abstract-calendar-widget.php';
@@ -106,40 +103,43 @@ class MPHBElementor
 		);
 	}
 
-    /**
-     * @param \Elementor\Widgets_Manager
-     */
-    public function registerWidgets($widgetsManager)
-    {
-	    foreach ( $this->widgets() as $widget ) {
-		    $widgetsManager->register( $widget );
-	    }
-    }
+	/**
+	 * @param \Elementor\Widgets_Manager
+	 */
+	public function registerWidgets( $widgetsManager ) {
 
-    public function enqueuePreviewStyles()
-    {
-        wp_enqueue_style('mphb-flexslider-css');
-    }
+		foreach ( $this->widgets() as $widget ) {
+			$widgetsManager->register( $widget );
+		}
+	}
 
-    public function addAvailableRoomsData()
-    {
-        $readableStatuses = array('publish');
+	public function enqueuePreviewStyles() {
 
-        if (current_user_can('read_private_posts')) {
-            $readableStatuses[] = 'private';
-        }
+		wp_enqueue_style( 'mphb-flexslider-css' );
+	}
 
-        $roomTypes = MPHB()->getRoomTypePersistence()->getPosts(array(
-            'post_status' => $readableStatuses
-        ));
+	public function addAvailableRoomsData() {
 
-        array_walk($roomTypes, array(MPHB()->getPublicScriptManager(), 'addRoomTypeData'));
-    }
+		$readableStatuses = array( 'publish' );
 
-    public static function create()
-    {
-        if (is_null(self::$instance)) {
-            self::$instance = new self();
-        }
-    }
+		if ( current_user_can( 'read_private_posts' ) ) {
+			$readableStatuses[] = 'private';
+		}
+
+		$roomTypes = MPHB()->getRoomTypePersistence()->getPosts(
+			array(
+				'post_status' => $readableStatuses,
+			)
+		);
+
+		array_walk( $roomTypes, array( MPHB()->getPublicScriptManager(), 'addRoomTypeData' ) );
+	}
+
+	public static function create() {
+
+		if ( is_null( self::$instance ) ) {
+            
+			self::$instance = new self();
+		}
+	}
 }
