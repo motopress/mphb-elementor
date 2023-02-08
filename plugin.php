@@ -31,36 +31,17 @@ class MPHBElementor
         }
 
         // Check required version
-        if (!version_compare(ELEMENTOR_VERSION, '1.8.0', '>=')) {
+        if (! version_compare(ELEMENTOR_VERSION, '3.5.0', '>=' )) {
             return;
         }
 
-	    if ($this->isActiveLegacyElementor()) {
-		    if (!version_compare(ELEMENTOR_VERSION, '2.2.4', '>=')) {
-			    add_action('elementor/init', array($this, 'registerCategoriesLegacy'), 10);
-		    }
-
-		    add_action('elementor/elements/categories_registered', array($this, 'registerCategoriesLegacy'), 10);
-		    add_action('elementor/widgets/widgets_registered', array($this, 'registerWidgetsLegacy'), 10);
-	    } else {
-		    add_filter('elementor/elements/categories_registered', array($this, 'registerCategories'), 10, 1);
-		    add_filter('elementor/widgets/register', array($this, 'registerWidgets'), 10, 1);
-	    }
+        add_filter('elementor/elements/categories_registered', array($this, 'registerCategories'), 10, 1);
+        add_filter('elementor/widgets/register', array($this, 'registerWidgets'), 10, 1);
 
         add_action('elementor/init', array($this, 'addAvailableRoomsData'));
         add_action('elementor/preview/enqueue_styles', array($this, 'enqueuePreviewStyles'));
     }
 
-	/**
-	 * @return bool
-	 */
-	protected function isActiveLegacyElementor() {
-		if (version_compare(ELEMENTOR_VERSION, '3.5.0', '>=' )) {
-			return false;
-		}
-
-		return true;
-	}
 
     public function loadTextdomain()
     {
@@ -78,24 +59,11 @@ class MPHBElementor
         load_plugin_textdomain(self::SLUG, false, self::SLUG . '/languages');
     }
 
-	/**
-	 * Note that the categories are displayed in the widgets panel, only if they
-	 * have widgets assigned to them.
-	 */
-	public function registerCategoriesLegacy()
-	{
-		\Elementor\Plugin::instance()->elements_manager->add_category(
-			self::WIDGET_CATEGORY_NAME,
-			array(
-				'title' => __('MotoPress Hotel Booking', 'mphb-elementor'),
-				'icon'  => 'fa fa-plug'
-			)
-		);
-	}
 
     /**
      * Note that the categories are displayed in the widgets panel, only if they
      * have widgets assigned to them.
+     * @param \Elementor\Elements_Manager
      */
 	public function registerCategories( $elementsManager )
 	{
@@ -138,13 +106,9 @@ class MPHBElementor
 		);
 	}
 
-    public function registerWidgetsLegacy()
-    {
-	    foreach ( $this->widgets() as $widget ) {
-		    \Elementor\Plugin::instance()->widgets_manager->register_widget_type( $widget );
-	    }
-    }
-
+    /**
+     * @param \Elementor\Widgets_Manager
+     */
     public function registerWidgets($widgetsManager)
     {
 	    foreach ( $this->widgets() as $widget ) {
