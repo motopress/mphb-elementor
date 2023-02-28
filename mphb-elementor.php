@@ -4,7 +4,7 @@
  * Plugin Name: Hotel Booking & Elementor Integration
  * Plugin URI: https://motopress.com/products/hotel-booking-elementor-integration/
  * Description: Manage hotel booking shortcodes in Elementor builder.
- * Version: 1.1.6
+ * Version: 1.1.7
  * Author: MotoPress
  * Author URI: https://motopress.com/
  * License: GPLv2 or later
