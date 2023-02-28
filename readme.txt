@@ -5,7 +5,7 @@ Tags: hotel, booking, reservation, elementor, hotel booking, booking form
 Requires at least: 4.6
 Tested up to: 6.1
 Requires PHP: 5.6
-Stable tag: 1.1.6
+Stable tag: 1.1.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -50,6 +50,9 @@ Hotel Booking & Elementor Integration plugin is distributed under the terms of t
 
 
 == Changelog ==
+
+= 1.1.7, Feb 28 2023 =
+* Fixed deprecation notices in Elementor 3.5 and above.
 
 = 1.1.6, Dec 23 2022 =
 * Fixed an issue with displaying widget categories in Elementor.
