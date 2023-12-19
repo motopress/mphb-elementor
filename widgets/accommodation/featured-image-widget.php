@@ -14,7 +14,7 @@ class AccommodationFeaturedImageWidget extends AbstractAccommodationWidget
 
     public function get_title()
     {
-        return __('Accommodation Featured Image', 'mphb-elementor');
+        return __('Accommodation Type Featured Image', 'mphb-elementor');
     }
 
     public function get_icon()

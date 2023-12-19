@@ -13,7 +13,7 @@ class AccommodationPriceWidget extends AbstractAccommodationWidget
 
     public function get_title()
     {
-        return __('Accommodation Price', 'mphb-elementor');
+        return __('Accommodation Type Price', 'mphb-elementor');
     }
 
     public function get_icon()

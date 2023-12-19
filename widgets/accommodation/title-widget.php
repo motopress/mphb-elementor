@@ -18,7 +18,7 @@ class AccommodationTitleWidget extends AbstractAccommodationWidget
 
     public function get_title()
     {
-        return __('Accommodation Title', 'mphb-elementor');
+        return __('Accommodation Type Title', 'mphb-elementor');
     }
 
     public function get_icon()

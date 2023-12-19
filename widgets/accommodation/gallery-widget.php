@@ -20,7 +20,7 @@ class AccommodationGalleryWidget extends AbstractAccommodationWidget
 
     public function get_title()
     {
-        return __('Accommodation Gallery', 'mphb-elementor');
+        return __('Accommodation Type Gallery', 'mphb-elementor');
     }
 
     public function get_icon()
