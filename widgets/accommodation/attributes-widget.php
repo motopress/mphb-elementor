@@ -8,6 +8,19 @@ use MPHB\Views\SingleRoomTypeView;
 class AccommodationAttributesWidget extends AbstractAccommodationWidget
 {
     private $hidden_attributes = [];
+    private $removed_actions = [];
+    private $setting_to_action = [
+        'capacity' => [
+            'renderTotalCapacity',
+            'renderAdults',
+            'renderChildren',
+        ],
+        'amenities' => [ 'renderFacilities' ],
+        'view' => [ 'renderView' ],
+        'size' => [ 'renderSize' ],
+        'bed-types' => [ 'renderBedType' ],
+        'categories' => [ 'renderCategories' ]
+    ];
 
     public function get_name()
     {
@@ -21,9 +34,7 @@ class AccommodationAttributesWidget extends AbstractAccommodationWidget
 
     public function get_icon()
     {
-        // Elementor icon class ( https://pojome.github.io/elementor-icons/ ) or
-        // Font Awesome icon class ( https://fontawesome.com/ ), like:
-        return 'eicon-image';
+        return 'eicon-bullet-list';
     }
 
     /**
@@ -76,7 +87,7 @@ class AccommodationAttributesWidget extends AbstractAccommodationWidget
     private function apply_attributes_params()
     {
         add_action('mphb_render_single_room_type_before_attributes', array($this, 'removeAttributesTitle'), 0);
-        add_action('mphb_render_single_room_type_before_attributes', array($this, 'filterAttributes'));
+        add_action('mphb_render_single_room_type_before_attributes', array($this, 'filter_attributes'));
 
         global $mphbAttributes;
         foreach ($this->custom_attributes as $slug => $attribute) {
@@ -89,7 +100,11 @@ class AccommodationAttributesWidget extends AbstractAccommodationWidget
     private function restore_attributes_params()
     {
         remove_action('mphb_render_single_room_type_before_attributes', array($this, 'removeAttributesTitle'), 0);
-        remove_action('mphb_render_single_room_type_before_attributes', array($this, 'filterAttributes'));
+        remove_action('mphb_render_single_room_type_before_attributes', array($this, 'filter_attributes'));
+
+        foreach ($this->removed_actions as $action => $priority) {
+            add_action('mphb_render_single_room_type_attributes', array('\MPHB\Views\SingleRoomTypeView', $action), $priority);
+        }
 
         global $mphbAttributes;
         $mphbAttributes = $this->custom_attributes;
@@ -100,32 +115,19 @@ class AccommodationAttributesWidget extends AbstractAccommodationWidget
         remove_action('mphb_render_single_room_type_before_attributes', array('\MPHB\Views\SingleRoomTypeView', '_renderAttributesTitle'), 10);
     }
 
-    public function filterAttributes()
+    public function filter_attributes()
     {
-        if ($this->should_hide_attr('capacity')) {
-            remove_action('mphb_render_single_room_type_attributes', array('\MPHB\Views\SingleRoomTypeView', 'renderTotalCapacity'), 5);
-            remove_action('mphb_render_single_room_type_attributes', array('\MPHB\Views\SingleRoomTypeView', 'renderAdults'), 10);
-            remove_action('mphb_render_single_room_type_attributes', array('\MPHB\Views\SingleRoomTypeView', 'renderChildren'), 20);
-        }
+        foreach ($this->setting_to_action as $setting => $actions) {
+            if ($this->should_hide_attr($setting)) {
+                foreach ($actions as $action) {
+                    $priority = has_action('mphb_render_single_room_type_attributes', array('\MPHB\Views\SingleRoomTypeView', $action));
 
-        if ($this->should_hide_attr('amenities')) {
-            remove_action('mphb_render_single_room_type_attributes', array('\MPHB\Views\SingleRoomTypeView', 'renderFacilities'), 30);
-        }
-
-        if ($this->should_hide_attr('view')) {
-            remove_action('mphb_render_single_room_type_attributes', array('\MPHB\Views\SingleRoomTypeView', 'renderView'), 40);
-        }
-
-        if ($this->should_hide_attr('size')) {
-            remove_action('mphb_render_single_room_type_attributes', array('\MPHB\Views\SingleRoomTypeView', 'renderSize'), 50);
-        }
-
-        if ($this->should_hide_attr('bed-types')) {
-            remove_action('mphb_render_single_room_type_attributes', array('\MPHB\Views\SingleRoomTypeView', 'renderBedType'), 60);
-        }
-
-        if ($this->should_hide_attr('categories')) {
-            remove_action('mphb_render_single_room_type_attributes', array('\MPHB\Views\SingleRoomTypeView', 'renderCategories'), 70);
+                    if ($priority) {
+                        remove_action( 'mphb_render_single_room_type_attributes', array( '\MPHB\Views\SingleRoomTypeView', $action ), $priority );
+                        $this->removed_actions[ $action ] = $priority;
+                    }
+                }
+            }
         }
     }
 

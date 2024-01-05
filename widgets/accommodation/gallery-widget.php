@@ -25,9 +25,7 @@ class AccommodationGalleryWidget extends AbstractAccommodationWidget
 
     public function get_icon()
     {
-        // Elementor icon class ( https://pojome.github.io/elementor-icons/ ) or
-        // Font Awesome icon class ( https://fontawesome.com/ ), like:
-        return 'eicon-image';
+        return 'eicon-gallery-group';
     }
 
     /**
@@ -238,7 +236,7 @@ class AccommodationGalleryWidget extends AbstractAccommodationWidget
 
     public function render_slider_wrapper_open()
     {
-?>
+        ?>
         <div class="mphb-room-type-gallery-wrapper mphb-single-room-type-gallery-wrapper">
         <?php
     }
@@ -247,7 +245,7 @@ class AccommodationGalleryWidget extends AbstractAccommodationWidget
     {
         ?>
         </div>
-<?php
+        <?php
     }
 
     public function filter_slider_attributes($atts)

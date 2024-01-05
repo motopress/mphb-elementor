@@ -23,9 +23,7 @@ class AccommodationTitleWidget extends AbstractAccommodationWidget
 
     public function get_icon()
     {
-        // Elementor icon class ( https://pojome.github.io/elementor-icons/ ) or
-        // Font Awesome icon class ( https://fontawesome.com/ ), like:
-        return 'eicon-image';
+        return 'eicon-post-title';
     }
 
     /**

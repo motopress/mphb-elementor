@@ -20,7 +20,14 @@ abstract class AbstractAccommodationWidget extends AbstractWidget
         $this->accommodation_id = !empty($settings['accommodation_id']) ? (int) $settings['accommodation_id'] : get_the_ID();
 
         if ('mphb_room_type' !== get_post_type($this->accommodation_id)) {
-            // print empty if post doesn't match
+            ?>
+            <div>
+                <div style="background: #f6f7f7; border-radius: 10px; padding: 3em 1em;">
+                    <p style="text-align: center; font-size: 1.5em; margin: 0;"><i class="<?php echo esc_attr($this->get_icon())?>"></i></p>
+                    <p style="text-align: center; font-weight: 700; font-size: 1.5em; margin: 0;"><?php echo esc_html($this->get_title()); ?></p>
+                </div>
+            </div>
+            <?php
         } else {
             $this->mphb_render($settings);
         }
@@ -100,8 +107,6 @@ abstract class AbstractAccommodationWidget extends AbstractWidget
         global $mphbAttributes;
 
         $this->accommodation_attributes_select = array(
-            'adults' =>  __('Adults', 'mphb-elementor'),
-            'children' =>  __('Children', 'mphb-elementor'),
             'capacity' =>  __('Total Capacity', 'mphb-elementor'),
             'amenities' =>  __('Amenities', 'mphb-elementor'),
             'view' =>  __('View', 'mphb-elementor'),
