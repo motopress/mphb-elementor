@@ -3,9 +3,9 @@ Contributors: MotoPress
 Donate link: https://motopress.com/
 Tags: hotel, booking, reservation, elementor, hotel booking, booking form
 Requires at least: 4.6
-Tested up to: 6.1
+Tested up to: 6.4
 Requires PHP: 5.6
-Stable tag: 1.1.7
+Stable tag: 1.2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -13,7 +13,7 @@ Build your property rental website visually with MotoPress Hotel Booking plugin 
 
 == Description ==
 
-We tied [WordPress Hotel Booking plugin](https://motopress.com/products/hotel-booking/?utm_source=wp-org&utm_medium=textlink&utm_campaign=hotel-booking-elementor-integration&utm_content=motopress-hotel-booking) and Elementor together to provide you with a more user-friendly toolkit for building your property rental website visually. 
+We tied [WordPress Hotel Booking plugin](https://motopress.com/products/hotel-booking/?utm_source=wp-org&utm_medium=textlink&utm_campaign=hotel-booking-elementor-integration&utm_content=motopress-hotel-booking) and Elementor together to provide you with a more user-friendly toolkit for building your property rental website visually.
 
 Thanks to smooth plugins integration, you'll be able to see all MotoPress Hotel Booking shortcodes and widgets (e.g. search availability form, rentals listing, etc.) in the list of the content modules in the Elementor builder. It will help you add all needed shortcodes and edit their parameters in a real time, via a more user-friendly Elementor interface.
 
@@ -50,6 +50,15 @@ Hotel Booking & Elementor Integration plugin is distributed under the terms of t
 
 
 == Changelog ==
+
+= 1.2.0, Jan 08 2024 =
+* Added Accommodation Type Title widget.
+* Added Accommodation Type Featured Image widget.
+* Added Accommodation Type Gallery widget.
+* Added Accommodation Type Price widget.
+* Added Accommodation Type Content widget.
+* Added Accommodation Type Attributes widget.
+* Added Accommodation Type Attribute widget.
 
 = 1.1.7, Feb 28 2023 =
 * Fixed deprecation notices in Elementor 3.5 and above.
