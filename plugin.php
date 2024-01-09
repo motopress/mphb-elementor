@@ -89,6 +89,15 @@ class MPHBElementor {
 		require __DIR__ . '/widgets/checkout-widget.php';
 		require __DIR__ . '/widgets/availability-calendar-widget.php';
 
+		require __DIR__ . '/widgets/accommodation/abstract-accommodation-widget.php';
+		require __DIR__ . '/widgets/accommodation/featured-image-widget.php';
+		require __DIR__ . '/widgets/accommodation/attribute-widget.php';
+		require __DIR__ . '/widgets/accommodation/attributes-widget.php';
+		require __DIR__ . '/widgets/accommodation/content-widget.php';
+		require __DIR__ . '/widgets/accommodation/gallery-widget.php';
+		require __DIR__ . '/widgets/accommodation/price-widget.php';
+		require __DIR__ . '/widgets/accommodation/title-widget.php';
+
 		return array(
 			new \mphbe\widgets\SearchFormWidget(),
 			new \mphbe\widgets\SearchResultsWidget(),
@@ -100,6 +109,13 @@ class MPHBElementor {
 			new \mphbe\widgets\BookingConfirmationWidget(),
 			new \mphbe\widgets\CheckoutWidget(),
 			new \mphbe\widgets\AvailabilityCalendarWidget(),
+			new \mphbe\widgets\AccommodationFeaturedImageWidget(),
+			new \mphbe\widgets\AccommodationAttributeWidget(),
+			new \mphbe\widgets\AccommodationAttributesWidget(),
+			new \mphbe\widgets\AccommodationContentWidget(),
+			new \mphbe\widgets\AccommodationGalleryWidget(),
+			new \mphbe\widgets\AccommodationPriceWidget(),
+			new \mphbe\widgets\AccommodationTitleWidget(),
 		);
 	}
 
@@ -138,7 +154,7 @@ class MPHBElementor {
 	public static function create() {
 
 		if ( is_null( self::$instance ) ) {
-            
+
 			self::$instance = new self();
 		}
 	}
