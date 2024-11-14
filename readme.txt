@@ -3,7 +3,7 @@ Contributors: MotoPress
 Donate link: https://motopress.com/
 Tags: hotel, booking, reservation, elementor, hotel booking, booking form
 Requires at least: 4.6
-Tested up to: 6.4
+Tested up to: 6.7
 Requires PHP: 5.6
 Stable tag: 1.2.0
 License: GPLv2 or later
@@ -100,12 +100,6 @@ How to add a hotel booking widget in Elementor?
 6. Find the MotoPress Hotel Booking category in the widgets list.
 7. Drag and drop the Search Availability widget to the page.
 8. Set your preferences for the booking form.
-
-== Screenshots ==
-
-1. Hotel Booking shortcodes.
-2. Shortcode parameters.
-
 
 == Copyright ==
 
