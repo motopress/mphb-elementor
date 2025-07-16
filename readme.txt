@@ -1,4 +1,4 @@
-=== Hotel Booking & Elementor Integration ===
+=== MotoPress Hotel Booking & Elementor Integration ===
 Contributors: MotoPress
 Donate link: https://motopress.com/
 Tags: hotel, booking, reservation, elementor, hotel booking, booking form
@@ -103,8 +103,8 @@ How to add a hotel booking widget in Elementor?
 
 == Copyright ==
 
-Hotel Booking & Elementor Integration plugin, Copyright (C) 2019, MotoPress https://motopress.com/
-Hotel Booking & Elementor Integration plugin is distributed under the terms of the GNU GPL.
+MotoPress Hotel Booking & Elementor Integration plugin, Copyright (C) 2019, MotoPress https://motopress.com/
+MotoPress Hotel Booking & Elementor Integration plugin is distributed under the terms of the GNU GPL.
 
 
 == Changelog ==
