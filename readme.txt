@@ -3,7 +3,7 @@ Contributors: MotoPress
 Donate link: https://motopress.com/
 Tags: hotel, booking, reservation, elementor, hotel booking, booking form
 Requires at least: 4.6
-Tested up to: 6.7
+Tested up to: 6.8
 Requires PHP: 5.6
 Stable tag: 1.2.0
 License: GPLv2 or later
@@ -108,6 +108,9 @@ MotoPress Hotel Booking & Elementor Integration plugin is distributed under the 
 
 
 == Changelog ==
+
+= 1.2.1, Aug 22 2025 =
+* Improved compatibility with WordPress 6.8, addressing the _load_textdomain_just_in_time notice.
 
 = 1.2.0, Jan 08 2024 =
 * Added Accommodation Type Title widget.
