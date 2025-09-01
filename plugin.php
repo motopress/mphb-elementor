@@ -14,8 +14,6 @@ class MPHBElementor {
 
 	private function __construct() {
 
-        add_action( 'plugins_loaded', array( $this, 'loadTextdomain' ) );
-
 		// Check if the MotoPress Hotel Booking is active
 		if ( ! class_exists( 'HotelBookingPlugin' ) ) {
 			return;
@@ -30,6 +28,8 @@ class MPHBElementor {
 		if ( ! version_compare( ELEMENTOR_VERSION, '3.5.0', '>=' ) ) {
 			return;
 		}
+
+		add_action( 'init', array( $this, 'loadTextdomain' ), -1 );
 
 		add_filter( 'elementor/elements/categories_registered', array( $this, 'registerCategories' ), 10, 1 );
 		add_filter( 'elementor/widgets/register', array( $this, 'registerWidgets' ), 10, 1 );
