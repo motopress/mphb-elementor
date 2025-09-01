@@ -5,7 +5,7 @@ Tags: hotel, booking, reservation, elementor, hotel booking, booking form
 Requires at least: 4.6
 Tested up to: 6.8
 Requires PHP: 5.6
-Stable tag: 1.2.0
+Stable tag: 1.2.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -82,6 +82,8 @@ Book your productivity on Elementor with these awesome tools.
 
 * Stratum [Elementor Widgets](https://wordpress.org/plugins/stratum/): add 20+ powerful and creative Elementor widgets to your site building toolkit.
 * Stratum [Elementor Mega Menu](https://motopress.com/products/stratum-menu/?utm_source=wp-org&utm_medium=textlink&utm_campaign=hotel-booking-elementor-integration): build content-rich navigation menus in Elementor.
+
+It's brought to you by MotoPress – a trusted WordPress developer with more than 10 years of experience in creating WordPress tools for content building, including our popular [WordPress Booking Plugins](https://motopress.com/products/category/wordpress-booking-plugins/?utm_source=wp-org&utm_medium=textlink&utm_campaign=hotel-booking-elementor-integration).
 
 == Installation ==
 
