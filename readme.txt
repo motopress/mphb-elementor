@@ -1,4 +1,4 @@
-=== MotoPress Hotel Booking & Elementor Integration ===
+=== MotoPress Hotel Booking for Elementor ===
 Contributors: MotoPress
 Donate link: https://motopress.com/
 Tags: hotel, booking, reservation, elementor, hotel booking, booking form
@@ -18,19 +18,19 @@ We tied [WordPress Hotel Booking plugin](https://motopress.com/products/hotel-bo
 * [Plugin Demo](https://hbdemo.getmotopress.com/) with the Dashboard access.
 * [Video Overview](https://www.youtube.com/watch?v=eNaTt2Fr9Eg).
 * [30+ Video Guides](https://www.youtube.com/playlist?list=PLbDImkyrISyKQccIsVDp98UXLIc1Yc3mn).
-* [Free Elementor hotel theme](https://wordpress.org/themes/albatross/).
+* [Free Hotel Theme for Elementor](https://wordpress.org/themes/albatross/).
 
 Thanks to this extension that smoothly integrates both plugins, your Elementor’s widgets panel is enriched with 17 new elements for the hotel site building needs. You’ll be able to add property listings, amenities, rates, image galleries, property booking forms, property directories, availability calendars, and more details about your accommodation visually in the Elementor builder.
 
 [youtube https://www.youtube.com/watch?v=eNaTt2Fr9Eg]
 
-### 17+ Elementor Widgets for Hotel Websites
+### 17+ Hotel Widgets for Elementor
 
-Craft your ideal booking page with Elementor! This add-on unlocks 17 dedicated Elementor widgets, letting you add and design hotel forms for property search, individual listings, directories, calendars, and more. Customize layouts, fields, and styles in a few clicks, without shortcodes or coding.
+Craft your ideal booking page with Elementor! This add-on unlocks 17 dedicated widgets for Elementor, letting you add and design hotel forms for property search, individual listings, directories, calendars, and more. Customize layouts, fields, and styles in a few clicks, without shortcodes or coding.
 
-1. Availability Calendar Elementor widget;
+1. Availability Calendar widget;
 2. Booking Confirmation widget;
-3. Booking Form Elementor widget;
+3. Booking Form widget;
 4. Booking Checkout widget;
 5. Accommodation Rates widget;
 6. Accommodation Listing widget;
@@ -50,18 +50,18 @@ Craft your ideal booking page with Elementor! This add-on unlocks 17 dedicated E
 
 Add custom accommodation search forms with ease, using Elementor's drag-and-drop interface and the dedicated Search Availability Form widget. Add essential fields like arrival, departure, guests, and room type, and tailor the layout of the availability checker to fit your website's design. Choose between horizontal or vertical form styles, add extra search filters, and fine-tune the form appearance via Elementor.
 
-### Live Elementor Booking Calendar & Availability Widget
+### Live Booking Calendar & Availability Widget for Elementor
 
 Showcase real-time booking availability with unlimited calendars. This Elementor widget that ships with the add-on displays a beautiful calendar for any property, highlighting booked and open dates. Choose how many months to show in the calendar, adjust per-day pricing display, and even enable direct bookings with a date picker.
 
 
-### 7 Elementor Widgets to Tailor Single Property Pages
+### 7 Widgets for Elementor to Tailor Single Property Pages
 
 Make your individual listings shine! This add-on provides seven dedicated widgets for crafting customized property presentations. Use Elementor widgets for property titles, featured images, galleries, prices, content, attributes, and more. Mix and match, rearrange elements, and personalize styles to create the perfect look for each rental.
 
 ### Dedicated Widget for Directory of Properties
 
-Present your collection of rentals with just one Elementor booking widget - it lets you build a customizable directory, showcasing properties with or without galleries, prices, booking buttons, descriptions, and details you normally want to show travelers. Choose the perfect layout and tailor the display to match your website's style.
+Present your collection of rentals with just one booking widget for Elementor - it lets you build a customizable directory, showcasing properties with or without galleries, prices, booking buttons, descriptions, and details you normally want to show travelers. Choose the perfect layout and tailor the display to match your website's style.
 
 This extension plugin is forever free - and it requires:
 
@@ -70,7 +70,7 @@ This extension plugin is forever free - and it requires:
 
 ### Useful Resources
 
-Discover more tutorials about this Elementor booking plugin.
+Discover more tutorials about this booking plugin for Elementor.
 
 * [How to Build a Hotel Website on Elementor](https://motopress.com/blog/elementor-booking-plugin-for-hotel/?utm_source=wp-org&utm_medium=textlink&utm_campaign=hotel-booking-elementor-integration).
 * [Real-life Websites Built with WordPress Hotel Booking Plugin & Elementor](https://motopress.com/blog/hotel-booking-websites-built-with-wordpress-reservation-plugin-elementor/?utm_source=wp-org&utm_medium=textlink&utm_campaign=hotel-booking-elementor-integration).
@@ -80,8 +80,8 @@ Discover more tutorials about this Elementor booking plugin.
 
 Book your productivity on Elementor with these awesome tools.
 
-* Stratum [Elementor Widgets](https://wordpress.org/plugins/stratum/): add 20+ powerful and creative Elementor widgets to your site building toolkit.
-* Stratum [Elementor Mega Menu](https://motopress.com/products/stratum-menu/?utm_source=wp-org&utm_medium=textlink&utm_campaign=hotel-booking-elementor-integration): build content-rich navigation menus in Elementor.
+* [Stratum Widgets for Elementor](https://wordpress.org/plugins/stratum/): add 20+ powerful and creative Elementor widgets to your site building toolkit.
+* [Stratum Mega Menu for Elementor](https://motopress.com/products/stratum-menu/?utm_source=wp-org&utm_medium=textlink&utm_campaign=hotel-booking-elementor-integration): build content-rich navigation menus in Elementor.
 
 It's brought to you by MotoPress – a trusted WordPress developer with more than 10 years of experience in creating WordPress tools for content building, including our popular [WordPress Booking Plugins](https://motopress.com/products/category/wordpress-booking-plugins/?utm_source=wp-org&utm_medium=textlink&utm_campaign=hotel-booking-elementor-integration).
 
@@ -96,7 +96,7 @@ How to add a hotel booking widget in Elementor?
 
 1. Download and install Elementor Page Builder.
 2. Download and install MotoPress Hotel Booking Lite or MotoPress Hotel Booking Pro.
-3. Download and install MotoPress Hotel Booking Elementor Integration add-on.
+3. Download and install MotoPress Hotel Booking for Elementor add-on.
 4. Add properties and configure settings via the MotoPress Hotel Booking plugin.
 5. Open the website page in Elementor.
 6. Find the MotoPress Hotel Booking category in the widgets list.
@@ -105,9 +105,8 @@ How to add a hotel booking widget in Elementor?
 
 == Copyright ==
 
-MotoPress Hotel Booking & Elementor Integration plugin, Copyright (C) 2019, MotoPress https://motopress.com/
-MotoPress Hotel Booking & Elementor Integration plugin is distributed under the terms of the GNU GPL.
-
+MotoPress Hotel Booking for Elementor, Copyright (C) 2019, MotoPress https://motopress.com/
+MotoPress Hotel Booking for Elementor plugin is distributed under the terms of the GNU GPL.
 
 == Changelog ==
 
