@@ -3,7 +3,7 @@ Contributors: MotoPress
 Donate link: https://motopress.com/
 Tags: hotel, booking, reservation, elementor, hotel booking, booking form
 Requires at least: 4.6
-Tested up to: 6.8
+Tested up to: 7.1
 Requires PHP: 5.6
 Stable tag: 1.2.1
 License: GPLv2 or later
